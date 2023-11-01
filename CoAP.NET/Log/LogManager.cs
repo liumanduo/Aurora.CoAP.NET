@@ -23,20 +23,7 @@ namespace CoAP.Log
 
         static LogManager()
         {
-            Type test;
-            try
-            {
-                test = Type.GetType("Common.Logging.LogManager, Common.Logging");
-            }
-            catch
-            {
-                test = null;
-            }
-
-            if (test == null)
-                _manager = new ConsoleLogManager();
-            else
-                _manager = new CommonLoggingManager();
+            _manager = new ConsoleLogManager();
         }
 
         /// <summary>
